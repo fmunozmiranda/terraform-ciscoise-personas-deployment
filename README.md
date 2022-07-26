@@ -57,7 +57,7 @@ None.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
+<!-- | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 |resource_group_name| Resource Group Name | `string` | - | yes|
 |resource_group_location| Resource Group Location | `string` | - | yes |
@@ -75,7 +75,7 @@ None.
 |create_resource_group| Determines to create or not a new Resource Group. | `boolean` | `true` | no |
 |create_virtual_network| Determines to create or not a new Virtual Network. | `string` | `true` | no |
 |create_security_group| Determines to create or not a new Security Group. | `string` | `true` | no |
-|create_subnet| Determines to create or not a new Subnet. | `string` | `true` | no |
+|create_subnet| Determines to create or not a new Subnet. | `string` | `true` | no | -->
 
 ## Outputs
 
