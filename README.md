@@ -38,14 +38,14 @@ The Personas Deployment Terraform module acomplishes the following tasks:
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_ciscoise"></a> [ciscoise](#requirement\_azure) | >= 0.6.4-beta |
+| <a name="requirement_ciscoise"></a> [ciscoise](#requirement\_azure) | >= 0.6.5-beta |
 | <a name="requirement_time"></a> [time](#requirement\_azure) | >= 0.7.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_ciscoise"></a> [ciscoise](#requirement\_azure) | >= 0.6.4-beta |
+| <a name="requirement_ciscoise"></a> [ciscoise](#requirement\_azure) | >= 0.6.5-beta |
 | <a name="requirement_time"></a> [time](#requirement\_azure) | >= 0.7.2 |
 
 ## Modules
