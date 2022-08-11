@@ -1,24 +1,46 @@
 variable "ise_username" {
   type = string
-  default = "admin"
 }
 
 variable "ise_password" {
   type = string
-  default = "C1sco12345"
 }
 
 variable "ise_deployment" {
   type = string
-  default = "large_deployment"
 }
 
 variable "ise_base_hostname" {
   type = string
-  default = "ISE"
 }
 
 variable "ise_domain" {
   type = string
-  default = "example.com"
+}
+
+variable "items" {
+  type = list(object({
+    name     = string
+    ip       = string
+    hostname = string
+    roles = list(string)
+    services = list(string)
+  }))
+}
+
+variable "items_to_register" {
+  type = list(object({
+    name     = string
+    ip       = string
+    hostname = string
+    roles = list(string)
+    services = list(string)
+  }))
+  default = [ {
+    hostname = "value"
+    ip = "value"
+    name = "value"
+    roles = [ "value" ]
+    services = [ "value" ]
+  } ]
 }

@@ -1,6 +1,12 @@
 # ISE Personas Deployment Terraform module
 
 Once all ISE nodes have been deployed to AWS/Azure, we can use Ansible to build a multi-node ISE cluster with distinct ISE personas, such as Policy Administration nodes (PAN), Monitoring and Troubleshooting nodes (MNT), and Policy Services nodes (PSN).
+The Personas Deployment Terraform module acomplishes the following tasks:
+
+1. Checks whether or not all the nodes are in standalone mode. If not, the playbook exits with an error message.
+2. Exports into the primary node the certificates of all the other nodes
+3. Assigns the Primary PAN persona to one of the nodes
+4. Assigns the corresponding personas to the rest of the nodes
 
 
 ## Usage
@@ -49,7 +55,6 @@ Once all ISE nodes have been deployed to AWS/Azure, we can use Ansible to build 
 | [large_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/large_deployment) | internal |
 | [medium_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/medium_deployment) | internal |
 | [small_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/small_deployment) | internal |
-| [single_node](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/single_node) | internal |
 
 ## Resources
 
@@ -57,25 +62,19 @@ None.
 
 ## Inputs
 
-<!-- | Name | Description | Type | Default | Required |
+| Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-|resource_group_name| Resource Group Name | `string` | - | yes|
-|resource_group_location| Resource Group Location | `string` | - | yes |
-|virtual_network_name| Virtual Network Name For ISE | `string` | - | yes |
-|virtual_network_address_space| Virtual Network Address Space For ISE| `string` | - | yes |
-|virtual_network_dns_servers| Virtual Network DNS Servers | `string` | - | yes |
-|subnet_name| Virtual Subnet Name For ISE | `string` | - | yes |
-|subnet_address_prefixes| Subnet Address Prefixes For ISE | `string` | - | yes |
-|network_security_group_name| Network Security Group Name For ISE | `string` | - | yes |
-|ise_username| ISE Username | `string` | - | yes |
-|ise_password| ISE Password | `string` | - | yes |
-|ise_deployment| ISE Deployment | `string` | - | yes |
-|ise_psn_instances| ISE PSN Instances | `number` | `0` | no |
 |ise_base_hostname| ISE Base Hostname | `string` | - | yes |
-|create_resource_group| Determines to create or not a new Resource Group. | `boolean` | `true` | no |
-|create_virtual_network| Determines to create or not a new Virtual Network. | `string` | `true` | no |
-|create_security_group| Determines to create or not a new Security Group. | `string` | `true` | no |
-|create_subnet| Determines to create or not a new Subnet. | `string` | `true` | no | -->
+|ise_password| Determines to create or not a new Resource Group. | `boolean` | `true` | no |
+|ise_deployment| Determines to create or not a new Virtual Network. | `string` | `true` | no |
+|ise_username| Determines to create or not a new Security Group. | `string` | `true` | no |
+|ise_domain| Determines to create or not a new Subnet. | `string` | `true` | no | 
+|items| Details nodes deployed | object | no | true |
+|itemsToRegister| Details nodes to be register, only necesary on large deployment | object | yes | false |
+
+
+## Assumptions
+- This role assumes the nodes have already been deployed to the AWS platform using the AWS Deployment role included in this collection. However, the role can be easily modified to suit any other needs, such as an on-prem deployment. 
 
 ## Outputs
 

@@ -2,7 +2,7 @@
 terraform {
   required_providers {
     ciscoise = {
-      version = "0.6.3-beta"
+      version = "0.6.4-beta"
       source  = "hashicorp.com/edu/ciscoise"
     }
     time = {
@@ -45,8 +45,14 @@ resource "ciscoise_personas_promote_primary" "promote_primary" {
   }
 }
 
-resource "ciscoise_personas_register_node" "register_node" {
+resource "time_sleep" "wait_1_minute" {
   depends_on = [ciscoise_personas_promote_primary.promote_primary]
+
+  create_duration = "1m"
+}
+
+resource "ciscoise_personas_register_node" "register_node" {
+  depends_on = [time_sleep.wait_1_minute]
   parameters{
     primary_ip= var.items[0].ip
     primary_username= var.username 

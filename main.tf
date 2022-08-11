@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     ciscoise = {
-      version = "0.6.3-beta"
+      version = "0.6.4-beta"
       source  = "hashicorp.com/edu/ciscoise"
     }
     time = {
@@ -19,6 +19,7 @@ module "small" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
+  items = var.items
 }
 module "medium" {
   source = "./modules/medium_deployment"
@@ -28,6 +29,7 @@ module "medium" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
+  items = var.items
 }
 module "large" {
   source = "./modules/large_deployment"
@@ -36,4 +38,6 @@ module "large" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
+  items = var.items
+  items_to_register = var.items_to_register
 }

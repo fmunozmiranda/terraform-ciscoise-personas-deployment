@@ -13,18 +13,6 @@ variable "items" {
     ip       = string
     hostname = string
   }))
-  default = [
-    {
-      name = "Ise Server 1"
-      ip = "10.0.0.0"
-      hostname = "hostname"
-    },
-    {
-      name = "Ise Server 2"
-      ip = "10.0.0.1"
-      hostname = "hostname2"
-    }
-  ]
 }
 
 variable "username" {

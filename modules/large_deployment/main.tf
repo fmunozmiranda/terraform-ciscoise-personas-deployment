@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     ciscoise = {
-      version = "0.6.3-beta"
+      version = "0.6.4-beta"
       source  = "hashicorp.com/edu/ciscoise"
     }
     time = {
@@ -45,8 +45,14 @@ resource "ciscoise_personas_promote_primary" "promote_primary" {
   }
 }
 
+resource "time_sleep" "wait_1_minute" {
+  depends_on = [ciscoise_personas_promote_primary.promote_primary]
+
+  create_duration = "1m"
+}
+
 resource "ciscoise_personas_register_node" "register_node" {
-   depends_on = [ciscoise_personas_promote_primary.promote_primary]
+   depends_on = [time_sleep.wait_1_minute]
   count = length(var.items_to_register)-1
   parameters{
     primary_ip= var.items_to_register[0].ip
