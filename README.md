@@ -52,9 +52,9 @@ The Personas Deployment Terraform module acomplishes the following tasks:
 
 | Name | Type |
 |------|------|
-| [large_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/large_deployment) | internal |
-| [medium_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/medium_deployment) | internal |
-| [small_deployment](https://github.com/fmunozmiranda/terraform-azure-ise-deployment/tree/main/modules/small_deployment) | internal |
+| [large_deployment](https://github.com/fmunozmiranda/terraform-ciscoise-personas-deployment/tree/main/modules/large_deployment) | internal |
+| [medium_deployment](https://github.com/fmunozmiranda/terraform-ciscoise-personas-deployment/tree/main/modules/medium_deployment) | internal |
+| [small_deployment](https://github.com/fmunozmiranda/terraform-ciscoise-personas-deployment/tree/main/modules/small_deployment) | internal |
 
 ## Resources
 
@@ -69,8 +69,8 @@ None.
 |ise_deployment| Determines to create or not a new Virtual Network. | `string` | `true` | no |
 |ise_username| Determines to create or not a new Security Group. | `string` | `true` | no |
 |ise_domain| Determines to create or not a new Subnet. | `string` | `true` | no | 
-|items| Details nodes deployed | object | no | true |
-|itemsToRegister| Details nodes to be register, only necesary on large deployment | object | yes | false |
+|items| Details nodes deployed | `object` | no | true |
+|itemsToRegister| Details nodes to be register, only necesary on large deployment | `object` | yes | false |
 
 
 ## Assumptions
