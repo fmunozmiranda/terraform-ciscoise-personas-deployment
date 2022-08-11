@@ -32,15 +32,15 @@ Once all ISE nodes have been deployed to AWS/Azure, we can use Ansible to build 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.1 |
-| <a name="requirement_ciscoise"></a> [azure](#requirement\_azure) | >= 0.6.5-beta |
-| <a name="requirement_time"></a> [azure](#requirement\_azure) | >= 0.7.2 |
+| [azure] | >= 0.6.5-beta |
+|  [azure] | >= 0.7.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_ciscoise"></a> [azure](#requirement\_azure) | >= 0.6.5-beta |
-| <a name="requirement_time"></a> [azure](#requirement\_azure) | >= 0.7.2 |
+| [azure] | >= 0.6.5-beta |
+|  [azure] | >= 0.7.2 |
 
 ## Modules
 
