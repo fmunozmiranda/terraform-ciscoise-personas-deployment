@@ -21,7 +21,8 @@ module "small" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
-  items = var.items
+  pan1_ip=var.pan1_ip 
+  pan2_ip=var.pan2_ip 
 }
 module "medium" {
   source = "./modules/medium_deployment"
@@ -31,7 +32,10 @@ module "medium" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
-  items = var.items
+  pan1_ip=var.pan1_ip 
+  pan2_ip=var.pan2_ip 
+  psn1_ip=var.psn1_ip
+  psn2_ip=var.psn2_ip
 }
 module "large" {
   source = "./modules/large_deployment"
@@ -40,6 +44,10 @@ module "large" {
   password = var.ise_password
   ise_base_hostname= var.ise_base_hostname
   ise_domain= var.ise_domain
-  items = var.items
-  items_to_register = var.items_to_register
+  pan1_ip=var.pan1_ip 
+  pan2_ip=var.pan2_ip 
+  psn1_ip=var.psn1_ip
+  psn2_ip=var.psn2_ip
+  mnt1_ip=var.mnt1_ip
+  mnt2_ip=var.mnt2_ip
 }

@@ -1,25 +1,43 @@
 ise_username= "admin"
 ise_password= "P@sbg1234"
-ise_deployment= "small_deployment"
+ise_deployment= "large_deployment"
 ise_base_hostname= "ISE-S"
 ise_domain= "example.com"
+
+# Variables common to all deployment types
+pan1_ip="54.190.164.49" 
+pan2_ip="34.220.79.8" 
+pan2_local_ip="" 
+
+
+# Additional variables for medium and large deployments
+
+mnt1_ip="" 
+mnt2_ip="" 
+psn1_ip="10.0.0.12" 
+psn2_ip="10.0.0.13" 
+mnt1_local_ip="" 
+mnt2_local_ip="" 
+psn1_local_ip="" 
+psn2_local_ip=""  
+
 //for small deployment
-items =[ 
-    {
-        name = "ISE-S-server-psn-1"
-        ip = "54.190.164.49"
-        hostname = "ise-s-server-1"
-        roles=[]
-        services=[]
-    },
-    {
-        name = "ISE-S-server-psn-2"
-        ip = "34.220.79.8"
-        hostname = "ise-s-server-2"
-        roles=[]
-        services=[]
-    }
-]
+# items =[ 
+#     {
+#         name = "ISE-S-server-psn-1"
+#         ip = "54.190.164.49"
+#         hostname = "ise-s-server-1"
+#         roles=[]
+#         services=[]
+#     },
+#     {
+#         name = "ISE-S-server-psn-2"
+#         ip = "34.220.79.8"
+#         hostname = "ise-s-server-2"
+#         roles=[]
+#         services=[]
+#     }
+# ]
 
  
 /*for medium deployment

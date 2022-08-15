@@ -1,23 +1,5 @@
 
-variable "items" {
-  type = list(object({
-    name     = string
-    ip       = string
-    hostname = string
-    roles = list(string)
-    services = list(string)
-  }))
-}
 
-variable "items_to_register" {
-  type = list(object({
-    name     = string
-    ip       = string
-    hostname = string
-    roles = list(string)
-    services = list(string)
-  }))
-}
 
 variable "username" {
   type = string
@@ -32,5 +14,27 @@ variable "ise_base_hostname" {
 }
 
 variable "ise_domain" {
+  type = string
+}
+
+variable "pan1_ip" {
+  type = string
+}
+variable "pan2_ip" {
+  type = string
+}
+
+variable "psn1_ip" {
+  type = string
+}
+variable "psn2_ip" {
+  type = string
+}
+
+variable "mnt1_ip" {
+  type = string
+}
+
+variable "mnt2_ip" {
   type = string
 }

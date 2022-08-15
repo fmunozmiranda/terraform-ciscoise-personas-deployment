@@ -65,12 +65,12 @@ Once all ISE nodes have been deployed to AWS/Azure, we can use Ansible to build 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 |ise_base_hostname| ISE Base Hostname | `string` | - | yes |
-|ise_password| Determines to create or not a new Resource Group. | `boolean` | `true` | no |
-|ise_deployment| Determines to create or not a new Virtual Network. | `string` | `true` | no |
-|ise_username| Determines to create or not a new Security Group. | `string` | `true` | no |
-|ise_domain| Determines to create or not a new Subnet. | `string` | `true` | no | 
-|items| Details nodes deployed | object | no | true |
-|itemsToRegister| Details nodes to be register, only necesary on large deployment | object | yes | false |
+|ise_password| Determines to create or not a new Resource Group. | `boolean` | `true` | yes |
+|ise_deployment| Determines to create or not a new Virtual Network. | `string` | `true` | yes |
+|ise_username| Determines to create or not a new Security Group. | `string` | `true` | yes |
+|ise_domain| Determines to create or not a new Subnet. | `string` | `true` | yes | 
+|pan1_ip| Details PAN 1 IP | `string` | - | yes |
+|pan2_ip| Details PAN 2 IP | `string` | - | yes |
 
 ## Outputs
 
