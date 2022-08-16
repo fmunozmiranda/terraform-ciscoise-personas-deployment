@@ -12,8 +12,8 @@ pan2_local_ip=""
 
 # Additional variables for medium and large deployments
 
-mnt1_ip="" 
-mnt2_ip="" 
+mnt1_ip="10.0.0.15" 
+mnt2_ip="10.0.0.14" 
 psn1_ip="10.0.0.12" 
 psn2_ip="10.0.0.13" 
 mnt1_local_ip="" 
